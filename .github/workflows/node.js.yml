@@ -34,3 +34,10 @@ jobs:
       run: |
         cd my-app
         npm run build
+      # If we had more time, at this point we can actually deploy our app
+      # to a staging server and then run functional tests
+    - name: Start the app 📤
+      run: |
+        cd my-app
+        npm start &
+        npx wait-on --timeout 60000
